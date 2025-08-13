@@ -75,3 +75,11 @@ while True:
         if lpred[0] == 0:
             lbl = 'Closed'
         break
+
+    if rpred[0] == 0 and lpred[0] == 0:
+        score += 1
+        cv2.putText(frame,"Closed",(10,height-20), font, 1,(255,255,255),1,cv2.LINE_AA)
+    # if(rpred[0]==1 or lpred[0]==1):
+    else:
+        score=score-1
+        cv2.putText(frame,"Open",(10,height-20), font, 1,(255,255,255),1,cv2.LINE_AA)
